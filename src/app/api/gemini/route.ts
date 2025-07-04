@@ -1,7 +1,8 @@
 // File: src/app/api/gemini/route.ts
-import { NextRequest } from "next/server";
 
-export async function POST(req: NextRequest) {
+import { withRateLimit } from "@/lib/withRateLimit";
+
+export const POST = withRateLimit(async (req: Request) => {
   const { prompt } = await req.json();
 
   const apiKey = process.env.GEMINI_API_KEY;
@@ -87,4 +88,4 @@ export async function POST(req: NextRequest) {
     console.error("Gemini Flash API error:", err);
     return new Response("Gemini Flash API error: " + err.message, { status: 500 });
   }
-}
+});

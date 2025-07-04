@@ -1,8 +1,9 @@
 // File: src/app/api/suggest/route.ts
-import { NextRequest } from "next/server";
 import { getWeather } from "@/lib/weather"; // ✅ using your existing weather lib
+import { withRateLimit } from "@/lib/withRateLimit";
 
-export async function POST(req: NextRequest) {
+
+export const POST = withRateLimit(async (req: Request) => {
   const { city, ingredients = [], preference } = await req.json();
 
   const apiKey = process.env.GEMINI_API_KEY;
@@ -96,4 +97,4 @@ export async function POST(req: NextRequest) {
     console.error("Suggest API error:", err);
     return new Response("Suggest API error: " + err.message, { status: 500 });
   }
-}
+})

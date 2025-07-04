@@ -20,7 +20,7 @@ export default function ChatBox() {
   const [lastOptions, setLastOptions] = useState<string[]>([]);
 
   const sendPrompt = async () => {
-    if (!city || !ingredients) return;
+    if (!city) return;
 
     const promptData = {
       city,
