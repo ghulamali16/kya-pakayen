@@ -203,6 +203,10 @@ export default function ChatBox() {
           </button>
         </div>
       )}
+      <p className="mt-8 text-center text-xs text-gray-500">
+        🧂 Made with code, salt & pepper by <span className="font-semibold text-emerald-600">Ghulam Ali Butt</span>
+      </p>
     </div>
+
   );
 }
