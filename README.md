@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🍲 Kya-Pakayen — Pakistani Recipe Suggestion Chatbot
 
-## Getting Started
+**Kya-Pakayen** is a chat-style web app that suggests regional Pakistani recipes based on:
 
-First, run the development server:
+- 🌡️ Weather in your city
+- 🥦 Seasonal ingredients
+- 🍗 Dietary preference (veg, meat, dessert, quick)
+- 🇵🇰 Regional/provincial dish styles
+
+It uses **Google Gemini AI** for generating natural recipe ideas, **Open-Meteo API** for live weather, and is built with **Next.js 14**, **Tailwind CSS**, and **TypeScript**.
+
+---
+
+## 🚀 Features
+
+- 🧠 AI-powered suggestions with Gemini API
+- 📍 Weather-aware recommendations
+- 🥘 Supports all Pakistani regions
+- 🥬 Optional seasonal ingredients input
+- 💬 Real chat-style UI with bubbles + typing indicator
+- 🇵🇰 Urdu + English (voice coming soon)
+- ✋ Rate-limited to prevent abuse
+- 🎨 Graffiti splash screen with food art
+
+---
+
+## 🔧 Tech Stack
+
+| Tech             | Purpose                    |
+|------------------|----------------------------|
+| Next.js 14       | Full-stack React framework |
+| Tailwind CSS     | UI styling                 |
+| TypeScript       | Safer coding               |
+| Google Gemini API| Recipe generation          |
+| Open-Meteo API   | Real-time weather data     |
+| Vercel           | Deployment & hosting       |
+| Ngrok            | Local sharing              |
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/ghulamali16/kya-pakayen.git
+cd kya-pakayen
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn
+```
+
+### 3. Set Environment Variables
+
+Create a `.env.local` file in the root and add:
+
+```env
+GEMINI_API_KEY=your_google_gemini_api_key
+```
+
+Get your API key from: https://aistudio.google.com/app/apikey
+
+---
+
+## 🧪 Running Locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To share with others using ngrok:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+ngrok http 3000
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛡️ Abuse Protection
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Basic in-memory **rate limiter** to prevent excessive Gemini API calls.  
+You can improve this with middleware like Redis or IP-aware rate limits in production.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🖼️ UI/UX Highlights
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Graffiti-style splash screen
+- Messenger-style chat interface
+- Typing bubble animation (•••)
+- Interactive "Get Recipe" buttons
+- Funny header font and colors
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ✍️ Credits
+
+Made with ❤️, code, salt & pepper by **[Ghulam Ali Butt](https://github.com/ghulamali16)**
+
+Shoutout to:
+- Google Gemini Team
+- Open-Meteo API
+- All Pakistani moms for asking: *"Kya Pakayen aaj?"*
